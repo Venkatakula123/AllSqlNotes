@@ -1,0 +1,43 @@
+//Merge Statement
+
+select * from dept;
+
+select * from depts_2;
+
+create table depts_2 as select * from dept;
+
+select * from depts_2;
+
+desc depts_2;
+
+truncate table depts_2;
+
+insert into depts_2 values(1,'A','Warangal');
+
+commit;
+
+merge into dept d using depts_2 s on 
+(d.deptno = s.deptno) when matched then
+update set d.dname = s.dname, d.loc = s.loc
+when not matched then
+insert (d.deptno,d.dname,d.loc) values (s.deptno,s.dname,s.loc);
+==============================================================================
+
+select * from ax;
+
+select * from bx;
+
+merge into bx b using ax a on (a.id = b.id) when matched then 
+update set b.name = a.name when not matched then 
+insert (b.name) values (a.name);
+==============================================================================
+
+select * from c;
+
+select * from d;
+
+
+merge into d d1 using c c1  ON (c1.id  = d1.bid) when matched then 
+update set d1.bname = c1.name when not matched then
+insert(d1.name) values (c1.bname);
+

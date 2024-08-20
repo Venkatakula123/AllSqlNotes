@@ -432,3 +432,5 @@ Having Clause
  This will work as where clause which can be used only with group by because of
 absence of where clause in group by.
  On top of the Group by if we want to filter the groups then we use having clause.
+
+Analytic functions compute an aggregate value based on a group of rows

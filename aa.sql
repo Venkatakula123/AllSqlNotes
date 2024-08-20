@@ -1,0 +1,39 @@
+select * from tab;
+
+create view v_emp as select * from emp where deptno = 10;
+
+select * from v_emp;
+
+desc v_emp;
+
+insert into v_emp values(7935,'Avr','CLERK',7839,'08-Aug-92',6000,NULL,10,'ACCOUNTING',15);
+
+select sysdate from dual;
+
+select * from emp where deptno = 20;
+
+create view v_ed as 
+select 
+e.EMPNO,  
+e.ENAME , 
+e.JOB,
+e.MGR,    
+e.HIREDATE,
+e.SAL,    
+e.COMM,   
+e.DEPTNO, 
+e.DNAME,  
+e.SNO,    
+d.DNO,   	
+d.DNAME as DEPTNAME,  
+d.LOC
+from emp e JOIN dept d ON e.deptno = d.dno where e.deptno = 20 ;
+
+desc emp;
+
+desc dept;
+
+select * from v_ED;
+
+insert into v_ED values(
+);
